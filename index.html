@@ -1,44 +1,197 @@
-<!DOCTYPE html><html lang="en">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Teacher of Impact | Zephaniah Litoro</title>
+  <meta name="description" content="Zephaniah Litoro — Teacher of Impact. Curriculum design, coaching, and resources to help educators create meaningful learning experiences." />
+  <link rel="canonical" href="https://teacherofimpact.github.io/" />
+  <meta name="theme-color" content="#111111" />
+  <!-- Robots: allow indexing; change to 'noindex' only if you want to hide the site -->
+  <meta name="robots" content="index, follow" />
+
   <style>
+    :root{
+      --bg:#f5f5f5;
+      --text:#222;
+      --brand:#c9a227;
+      --nav:#111;
+      --link:#f0c75e;
+      --max-width:1000px;
+      --gap:1rem;
+    }
+    html,body{height:100%;}
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       line-height: 1.6;
-      background: #f5f5f5;
-      color: #222;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
+
+    /* Skip link for keyboard users */
+    .skip-link{
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus{
+      left: 10px;
+      top: 10px;
+      width: auto;
+      height: auto;
+      padding: 8px 12px;
+      background: #000;
+      color: #fff;
+      z-index: 1000;
+      border-radius: 4px;
+    }
+
     header {
-      background: linear-gradient(135deg, #000000, #c9a227);
-      color: white;
+      background: linear-gradient(135deg,#000000 0%, #c9a227 100%);
+      color: #fff;
       padding: 60px 20px;
       text-align: center;
     }
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      line-height: 1.05;
     }
     header p {
-      margin-top: 10px;
-      font-size: 1.2rem;
+      margin-top: .6rem;
+      font-size: clamp(.95rem, 2.2vw, 1.15rem);
+      opacity: 0.95;
     }
+
     nav {
-      background: #111;
-      padding: 10px;
+      background: var(--nav);
+      padding: 10px 12px;
       text-align: center;
     }
     nav a {
-      color: #f0c75e;
-      margin: 0 15px;
+      color: var(--link);
+      margin: 0 12px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 700;
+      font-size: .95rem;
     }
-    nav a:hover {
+    nav a:focus, nav a:hover {
       text-decoration: underline;
+      outline: 3px solid rgba(201,162,39,.12);
+      outline-offset: 3px;
     }
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
+
+    main {
+      max-width: var(--max-width);
+      margin: 24px auto;
+      padding: 0 20px 64px;
+    }
+    .grid {
+      display: grid;
+      gap: var(--gap);
+      grid-template-columns: 1fr;
+    }
+    @media(min-width:820px){
+      .grid{ grid-template-columns: 1fr 320px; align-items:start;}
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 1px 4px rgba(16,24,40,.06);
+    }
+
+    footer{
+      text-align:center;
+      padding: 24px 12px;
+      color:#555;
+      font-size:.95rem;
+    }
+
+    a.external {
+      color: var(--link);
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header role="banner" aria-labelledby="site-title">
+    <h1 id="site-title">Teacher of Impact</h1>
+    <p>Hi — I'm Zephaniah Litoro. I design curriculum, coach educators, and build learning resources that matter.</p>
+  </header>
+
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#resources">Resources</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main id="main" role="main">
+    <div class="grid">
+      <section class="card" id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About</h2>
+        <p>Welcome — this site highlights my work with teachers, workshops, and curriculum. If you'd like to collaborate, see the contact section below.</p>
+        <h3>What I do</h3>
+        <ul>
+          <li>Curriculum design & instructional coaching</li>
+          <li>Workshops and professional learning</li>
+          <li>Open resources & templates for teachers</li>
+        </ul>
+      </section>
+
+      <aside class="card" id="work" aria-labelledby="work-heading">
+        <h2 id="work-heading">Recent work</h2>
+        <p>Examples, workshops, and downloadable resources will appear here. Add links to PDFs or a GitHub repo for materials.</p>
+        <p><a class="external" href="https://github.com/zephaniahlitoro-eng" target="_blank" rel="noopener noreferrer">My GitHub</a></p>
+      </aside>
+    </div>
+
+    <section class="card" id="resources" aria-labelledby="resources-heading" style="margin-top:20px;">
+      <h2 id="resources-heading">Resources</h2>
+      <p>Links, guides, and templates for teachers.</p>
+      <ul>
+        <li><a href="#">Teaching template (coming soon)</a></li>
+        <li><a href="#contact">Book a workshop</a></li>
+      </ul>
+    </section>
+
+    <section class="card" id="contact" aria-labelledby="contact-heading" style="margin-top:20px;">
+      <h2 id="contact-heading">Contact</h2>
+      <p>Email: <a href="mailto:hello@teacherofimpact.example" class="external">hello@teacherofimpact.example</a></p>
+      <p>Or open an issue in the <a href="https://github.com/zephaniahlitoro-eng/teacherofimpact.github.io" target="_blank" rel="noopener noreferrer">site repository</a> to propose content changes.</p>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; <span id="year"></span> Zephaniah Litoro — Teacher of Impact</p>
+  </footer>
+
+  <script>
+    // Small runtime improvements: set year and reduce render-blocking
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- JSON-LD minimal structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Zephaniah Litoro",
+    "url": "https://teacherofimpact.github.io",
+    "sameAs": [
+      "https://github.com/zephaniahlitoro-eng"
+    ],
+    "jobTitle": "Teacher, Curriculum Designer"
+  }
+  </script>
+</body>
+</html>
